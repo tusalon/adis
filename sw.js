@@ -1,22 +1,22 @@
-// sw.js - Service Worker para STUDIO ISMA NAILS
+// sw.js - Service Worker para Adis
 
-const CACHE_NAME = 'studioisma-v1';
+const CACHE_NAME = 'adis-v1';
 const urlsToCache = [
-  '/Studioisma.nails/',
-  '/Studioisma.nails/index.html',
-  '/Studioisma.nails/admin.html',
-  '/Studioisma.nails/admin-login.html',
-  '/Studioisma.nails/setup-wizard.html',
-  '/Studioisma.nails/editar-negocio.html',
-  '/Studioisma.nails/manifest.json',
-  '/Studioisma.nails/icons/icon-72x72.png',
-  '/Studioisma.nails/icons/icon-96x96.png',
-  '/Studioisma.nails/icons/icon-128x128.png',
-  '/Studioisma.nails/icons/icon-144x144.png',
-  '/Studioisma.nails/icons/icon-152x152.png',
-  '/Studioisma.nails/icons/icon-192x192.png',
-  '/Studioisma.nails/icons/icon-384x384.png',
-  '/Studioisma.nails/icons/icon-512x512.png'
+  '/adis/',
+  '/adis/index.html',
+  '/adis/admin.html',
+  '/adis/admin-login.html',
+  '/adis/setup-wizard.html',
+  '/adis/editar-negocio.html',
+  '/adis/manifest.json',
+  '/adis/icons/icon-72x72.png',
+  '/adis/icons/icon-96x96.png',
+  '/adis/icons/icon-128x128.png',
+  '/adis/icons/icon-144x144.png',
+  '/adis/icons/icon-152x152.png',
+  '/adis/icons/icon-192x192.png',
+  '/adis/icons/icon-384x384.png',
+  '/adis/icons/icon-512x512.png'
 ];
 
 // ============================================
@@ -108,7 +108,7 @@ self.addEventListener('fetch', event => {
           }
           // Si no hay cache y es imagen, devolver icon por defecto
           if (event.request.url.match(/\.(jpg|jpeg|png|gif|svg|webp)$/)) {
-            return caches.match('/Studioisma.nails/icons/icon-192x192.png');
+            return caches.match('/adis/icons/icon-192x192.png');
           }
           return new Response('Error de red', { status: 408 });
         });
@@ -138,6 +138,6 @@ self.addEventListener('message', event => {
   }
 });
 
-console.log('✅ Service Worker configurado para STUDIO ISMA NAILS');
+console.log('✅ Service Worker configurado para Adis');
 console.log('📦 Cache:', CACHE_NAME);
 console.log('📄 Archivos a cachear:', urlsToCache.length);
